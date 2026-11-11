@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coiffeur Princess | Ihr Quartier-Coiffeur in Zürich-Affoltern</title>
+<meta name="description" content="Coiffeur Princess in Zürich-Affoltern (Kreis 11): Haarschnitte für Damen, Herren und Kinder, Rasur, Fadentechnik und Echthaar-Verlängerungen. Herrenschnitt ab CHF 30. Telefon 044 371 55 55.">
+<meta name="theme-color" content="#1b1719">
+<meta property="og:title" content="Coiffeur Princess | Zürich-Affoltern">
+<meta property="og:description" content="Der sympathische Quartier-Salon im Kreis 11. Persönlich, unkompliziert und fair im Preis.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:image" content="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-193420_neev7u.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231b1719'/%3E%3Cpath d='M5 16.5h14l1.2-8-4.4 3.2L12 6l-3.8 5.7-4.4-3.2z' fill='%23c9a063'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Coiffeur Princess",
+  "image": "https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-193420_neev7u.png",
+  "telephone": "+41443715555",
+  "priceRange": "CHF",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "In Böden 169",
+    "postalCode": "8046",
+    "addressLocality": "Zürich",
+    "addressCountry": "CH"
+  },
+  "founder": { "@type": "Person", "name": "Hasan Hamo" },
+  "sameAs": ["https://www.instagram.com/coiffeur.princess"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00" }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #faf6f1;
+    --bg-soft: #f3ebe2;
+    --card: #ffffff;
+    --ink: #1d1a1c;
+    --muted: #6d6367;
+    --line: #e6dcd0;
+    --gold: #b8894f;
+    --gold-dark: #8f6830;
+    --gold-light: #d9b986;
+    --dark: #1b1719;
+    --radius: 20px;
+    --shadow: 0 20px 50px -20px rgba(40, 25, 15, .25);
+    --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+    --sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+  h1 { font-size: clamp(2.7rem, 6.2vw, 4.9rem); }
+  h2 { font-size: clamp(2.1rem, 4.2vw, 3.3rem); }
+  h3 { font-size: 1.6rem; }
+  p { margin: 0 0 1em; }
+  section { scroll-margin-top: 80px; }
+
+  .container { width: min(1160px, 100% - 44px); margin-inline: auto; }
+  .section { padding: clamp(70px, 10vw, 120px) 0; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  .lead { font-size: 1.12rem; color: var(--muted); max-width: 60ch; }
+  .section-head { max-width: 720px; margin-bottom: clamp(36px, 5vw, 56px); }
+  .section-head h2 { margin-bottom: 16px; }
+  em.accent { font-style: italic; font-weight: 500; color: var(--gold-dark); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 15px 26px; border-radius: 999px; border: 1.5px solid transparent;
+    font: 600 1rem var(--sans); text-decoration: none; cursor: pointer;
+    transition: transform .2s, background .2s, color .2s, border-color .2s, box-shadow .2s;
+  }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(143,104,48,.7); }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: #fff; transform: translateY(-2px); }
+  .btn-gold { background: var(--gold); color: #1b1719; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-light { border-color: rgba(255,255,255,.4); color: #fff; }
+  .btn-light:hover { background: #fff; color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+  /* Header */
+  .header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 246, 241, .88);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s;
+  }
+  .header.scrolled { border-color: var(--line); box-shadow: 0 8px 30px -22px rgba(0,0,0,.4); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
+  .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo svg { width: 30px; height: 30px; color: var(--gold); }
+  .logo span { font-family: var(--serif); font-size: 1.55rem; font-weight: 600; line-height: 1; }
+  .logo small { display: block; font: 700 .58rem var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .nav { display: flex; align-items: center; gap: 30px; }
+  .nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: .95rem; position: relative; padding: 6px 0; }
+  .nav a:not(.btn)::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1.5px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+  .nav a:not(.btn):hover::after { transform: scaleX(1); }
+  .nav .btn { padding: 11px 20px; font-size: .92rem; }
+  .menu-btn { display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: var(--card); cursor: pointer; align-items: center; justify-content: center; }
+  .menu-btn span, .menu-btn span::before, .menu-btn span::after { content: ""; display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .25s, opacity .25s; position: relative; }
+  .menu-btn span::before { position: absolute; top: -6px; }
+  .menu-btn span::after { position: absolute; top: 6px; }
+  .menu-btn[aria-expanded="true"] span { background: transparent; }
+  .menu-btn[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span::after { transform: translateY(-6px) rotate(-45deg); }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: clamp(40px, 6vw, 80px) 0 clamp(60px, 8vw, 100px); }
+  .hero::before {
+    content: ""; position: absolute; right: -12%; top: -20%; width: 60vw; height: 60vw; max-width: 820px; max-height: 820px;
+    background: radial-gradient(circle, #ecd9c0 0%, rgba(236,217,192,0) 68%); z-index: -1;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(30px, 6vw, 80px); align-items: center; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .lead { margin-bottom: 32px; font-size: 1.18rem; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
+  .status { display: inline-flex; align-items: center; gap: 10px; font-size: .93rem; font-weight: 500; color: var(--muted); }
+  .status i { width: 10px; height: 10px; border-radius: 50%; background: #b9b0a6; flex: none; }
+  .status.open i { background: #2e9e5b; box-shadow: 0 0 0 5px rgba(46,158,91,.18); }
+  .status.closed i { background: #c0523d; }
+
+  .hero-media { position: relative; justify-self: center; width: min(100%, 460px); }
+  .hero-frame { aspect-ratio: 4 / 5; border-radius: 999px 999px var(--radius) var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--bg-soft); }
+  .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-media::after { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1.5px solid var(--gold); border-radius: 999px 999px var(--radius) var(--radius); z-index: -1; }
+  .rating-badge {
+    position: absolute; left: -26px; bottom: 34px; background: var(--card); border-radius: 18px; padding: 14px 20px;
+    box-shadow: var(--shadow); display: flex; align-items: center; gap: 14px; text-decoration: none;
+  }
+  .rating-badge strong { font: 600 2.3rem/1 var(--serif); }
+  .rating-badge .stars { color: var(--gold); letter-spacing: 2px; font-size: .95rem; line-height: 1.2; }
+  .rating-badge small { display: block; color: var(--muted); font-size: .78rem; }
+
+  /* Facts strip */
+  .facts { background: var(--dark); color: #fff; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .fact { padding: 34px 20px; text-align: center; border-left: 1px solid rgba(255,255,255,.1); }
+  .fact:first-child { border-left: 0; }
+  .fact strong { display: block; font: 600 2.4rem/1 var(--serif); color: var(--gold-light); margin-bottom: 8px; }
+  .fact span { font-size: .85rem; letter-spacing: .06em; color: rgba(255,255,255,.72); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(36px, 7vw, 90px); align-items: center; }
+  .about-media { position: relative; }
+  .about-media .frame { aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--bg-soft); }
+  .about-media img { width: 100%; height: 100%; object-fit: cover; }
+  .about-tag { position: absolute; right: -16px; top: 28px; background: var(--gold); color: #1b1719; padding: 12px 18px; border-radius: 14px; font-weight: 700; font-size: .85rem; line-height: 1.3; box-shadow: var(--shadow); }
+  .about h2 { margin-bottom: 22px; }
+  .checks { list-style: none; padding: 0; margin: 26px 0 30px; display: grid; gap: 12px; }
+  .checks li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; }
+  .checks li::before { content: "✓"; flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--bg-soft); color: var(--gold-dark); font-weight: 700; font-size: .85rem; display: grid; place-items: center; margin-top: 1px; }
+  .signature { font: italic 500 1.7rem var(--serif); }
+  .signature small { display: block; font: 600 .75rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+
+  /* Services */
+  .services { background: var(--bg-soft); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .card {
+    position: relative; background: var(--card); border-radius: var(--radius); padding: 34px 30px 30px;
+    border: 1px solid var(--line); transition: transform .3s, box-shadow .3s, border-color .3s;
+  }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+  .card .num { font: italic 500 1.25rem var(--serif); color: var(--gold-dark); display: block; margin-bottom: 18px; }
+  .card h3 { margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: .97rem; margin-bottom: 20px; }
+  .card .price { font-weight: 700; font-size: .92rem; padding-top: 16px; border-top: 1px solid var(--line); display: block; }
+  .badge-new { position: absolute; top: 26px; right: 26px; background: var(--ink); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; }
+
+  /* Prices */
+  .prices { background: var(--dark); color: #fff; }
+  .prices .eyebrow { color: var(--gold-light); }
+  .prices-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(36px, 7vw, 90px); align-items: start; }
+  .prices .lead { color: rgba(255,255,255,.7); }
+  .prices h2 { margin-bottom: 18px; }
+  .price-list { list-style: none; margin: 0; padding: 0; }
+  .price-list li { display: flex; align-items: baseline; gap: 14px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .price-list li:first-child { padding-top: 0; }
+  .price-list .name { font: 600 1.5rem var(--serif); }
+  .price-list .name small { display: block; font: 400 .85rem var(--sans); color: rgba(255,255,255,.6); margin-top: 2px; }
+  .price-list .dots { flex: 1; border-bottom: 1px dotted rgba(255,255,255,.3); transform: translateY(-5px); min-width: 20px; }
+  .price-list .amount { font-weight: 700; color: var(--gold-light); white-space: nowrap; }
+  .price-note { margin-top: 24px; font-size: .88rem; color: rgba(255,255,255,.6); }
+
+  /* Gallery */
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .gallery-item { position: relative; padding: 0; border: 0; background: var(--bg-soft); border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; cursor: zoom-in; }
+  .gallery-item:nth-child(even) { transform: translateY(26px); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-item::after { content: "＋"; position: absolute; right: 14px; bottom: 14px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.92); display: grid; place-items: center; font-weight: 700; opacity: 0; transition: opacity .3s; }
+  .gallery-item:hover::after, .gallery-item:focus-visible::after { opacity: 1; }
+  .gallery-cta { margin-top: 64px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 26px 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+  .gallery-cta p { margin: 0; font: 600 1.5rem var(--serif); }
+
+  /* Reviews */
+  .reviews { background: var(--bg-soft); }
+  .reviews-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(30px, 6vw, 70px); align-items: center; }
+  .score { background: var(--card); border-radius: var(--radius); padding: 44px 34px; text-align: center; box-shadow: var(--shadow); }
+  .score strong { font: 600 5.5rem/1 var(--serif); display: block; }
+  .score .stars { color: var(--gold); font-size: 1.6rem; letter-spacing: 5px; margin: 6px 0 10px; }
+  .score p { color: var(--muted); font-size: .95rem; margin-bottom: 22px; }
+  .praise { display: grid; gap: 16px; }
+  .praise-item { display: flex; gap: 20px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
+  .praise-item span { font: italic 500 2rem/1 var(--serif); color: var(--gold); flex: none; }
+  .praise-item h3 { font-size: 1.4rem; margin-bottom: 4px; }
+  .praise-item p { margin: 0; color: var(--muted); font-size: .96rem; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(26px, 4vw, 40px); }
+  .panel h3 { margin-bottom: 20px; font-size: 1.8rem; }
+  .hours { width: 100%; border-collapse: collapse; }
+  .hours td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
+  .hours td:last-child { text-align: right; font-weight: 600; white-space: nowrap; }
+  .hours tr:last-child td { border-bottom: 0; }
+  .hours tr.today td { background: var(--bg-soft); }
+  .hours tr.today td:first-child { border-radius: 10px 0 0 10px; }
+  .hours tr.today td:last-child { border-radius: 0 10px 10px 0; }
+  .hours tr.today td:first-child::after { content: "Heute"; margin-left: 10px; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: #1b1719; padding: 3px 9px; border-radius: 999px; vertical-align: middle; }
+  .hours .off td:last-child { color: var(--muted); font-weight: 500; }
+  .panel .status { margin-top: 20px; }
+  .contact-list { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 20px; }
+  .contact-list li { display: flex; gap: 16px; align-items: flex-start; }
+  .contact-list .ico { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--bg-soft); display: grid; place-items: center; color: var(--gold-dark); }
+  .contact-list .ico svg { width: 20px; height: 20px; }
+  .contact-list small { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .contact-list a, .contact-list b { font-weight: 600; font-size: 1.08rem; text-decoration: none; }
+  .contact-list a:hover { color: var(--gold-dark); }
+  .contact-list p { margin: 2px 0 0; font-size: .92rem; color: var(--muted); }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .map { grid-column: 1 / -1; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); height: 400px; background: var(--bg-soft); }
+  .map iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(.25); }
+
+  /* CTA band + Footer */
+  .cta-band { background: var(--gold); color: #1b1719; padding: clamp(50px, 7vw, 80px) 0; text-align: center; }
+  .cta-band h2 { margin-bottom: 12px; }
+  .cta-band p { margin-bottom: 26px; font-size: 1.08rem; }
+  .cta-band .btn-primary:hover { background: #fff; color: var(--ink); box-shadow: none; }
+  .footer { background: var(--dark); color: rgba(255,255,255,.72); padding: 60px 0 30px; font-size: .93rem; }
+  .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .footer .logo span { color: #fff; }
+  .footer .logo small { color: rgba(255,255,255,.55); }
+  .footer h4 { margin: 0 0 14px; color: #fff; font: 700 .76rem var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .footer p { margin: 14px 0 0; max-width: 34ch; }
+  .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .footer a { text-decoration: none; }
+  .footer a:hover { color: var(--gold-light); }
+  .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 24px; font-size: .82rem; color: rgba(255,255,255,.5); }
+
+  /* Mobile call bar */
+  .callbar { display: none; }
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(15, 12, 13, .94); display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .lightbox[hidden] { display: none; }
+  .lightbox img { max-width: min(92vw, 900px); max-height: 88vh; border-radius: 12px; object-fit: contain; }
+  .lightbox button { position: absolute; width: 50px; height: 50px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 1.5rem; cursor: pointer; display: grid; place-items: center; transition: background .2s; }
+  .lightbox button:hover { background: rgba(255,255,255,.3); }
+  .lb-close { top: 18px; right: 18px; }
+  .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+  /* Reveal animation (only when JS is active) */
+  .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .gallery-item.reveal:nth-child(even) { transform: translateY(52px); }
+  .js .gallery-item.reveal.in:nth-child(even) { transform: translateY(26px); }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .menu-btn { display: inline-flex; }
+    .nav {
+      position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--bg); border-bottom: 1px solid var(--line); padding: 10px 22px 24px;
+      box-shadow: 0 30px 40px -30px rgba(0,0,0,.35);
+      opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity .25s, transform .25s, visibility .25s;
+    }
+    .nav.open { opacity: 1; visibility: visible; transform: none; }
+    .nav a:not(.btn) { padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+    .nav a:not(.btn)::after { display: none; }
+    .nav .btn { margin-top: 18px; padding: 15px 20px; }
+    .hero-grid, .about-grid, .prices-grid, .reviews-grid { grid-template-columns: 1fr; }
+    .hero-media { margin-top: 10px; width: min(100%, 400px); }
+    .rating-badge { left: -8px; }
+    .about-media { max-width: 460px; }
+    .about-tag { right: 10px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .fact:nth-child(3) { border-left: 0; }
+    .fact:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.1); }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid > div:first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 16px; padding-bottom: 68px; }
+    .cards, .contact-grid { grid-template-columns: 1fr; }
+    .hero-media::after { inset: 12px -10px -12px 10px; }
+    .hero-cta .btn { flex: 1 1 100%; }
+    .gallery-grid { gap: 12px; }
+    .gallery-item:nth-child(even), .js .gallery-item.reveal:nth-child(even), .js .gallery-item.reveal.in:nth-child(even) { transform: none; }
+    .gallery-cta { margin-top: 30px; }
+    .price-list .name { font-size: 1.3rem; }
+    .map { height: 320px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .callbar {
+      display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+      background: var(--dark); box-shadow: 0 -10px 30px -10px rgba(0,0,0,.4);
+    }
+    .callbar a { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 20px 10px; color: #fff; text-decoration: none; font-weight: 600; font-size: .98rem; }
+    .callbar a:first-child { background: var(--gold); color: #1b1719; }
+    .callbar svg { width: 18px; height: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    .js .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="Coiffeur Princess – Startseite">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18.5h18l1.5-10.5-5.6 4.1L12 4.5l-4.9 7.6L1.5 8 3 18.5z"/></svg>
+      <span><small>Coiffeur</small>Princess</span>
+    </a>
+    <button class="menu-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#preise">Preise</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="tel:+41443715555" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        044 371 55 55
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Zürich-Affoltern · Kreis 11</span>
+      <h1>Schöne Haare.<br>Faire Preise.<br><em class="accent">Ganz persönlich.</em></h1>
+      <p class="lead">Coiffeur Princess ist Ihr sympathischer Quartier-Salon in Zürich-Affoltern – für Damen, Herren und Kinder. Unkompliziert, herzlich und mit viel Erfahrung.</p>
+      <div class="hero-cta">
+        <a href="tel:+41443715555" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Termin: 044 371 55 55
+        </a>
+        <a href="#angebot" class="btn btn-ghost">Angebot ansehen</a>
+      </div>
+      <span class="status" data-status><i></i><span>Mo–Fr 09–19 Uhr · Sa 09–18 Uhr</span></span>
+    </div>
+
+    <div class="hero-media">
+      <div class="hero-frame">
+        <!-- FOTO 1 (Hero) -->
+        <img src="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-193420_neev7u.png" alt="Coiffeur Princess in Zürich-Affoltern" width="460" height="575" fetchpriority="high">
+      </div>
+      <a class="rating-badge" href="https://www.google.com/maps/search/?api=1&query=Coiffeur%20Princess%2C%20In%20B%C3%B6den%20169%2C%208046%20Z%C3%BCrich" target="_blank" rel="noopener" aria-label="Google-Bewertung: ca. 4.8 von 5 Sternen bei über 160 Rezensionen">
+        <strong>4.8</strong>
+        <span><span class="stars" aria-hidden="true">★★★★★</span><small>160+ Google-Rezensionen</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACTS ============ -->
+<section class="facts" aria-label="Auf einen Blick">
+  <div class="container facts-grid">
+    <div class="fact"><strong>4.8 / 5</strong><span>Sterne auf Google</span></div>
+    <div class="fact"><strong>160+</strong><span>Rezensionen</span></div>
+    <div class="fact"><strong>ab CHF 30</strong><span>Herrenschnitt</span></div>
+    <div class="fact"><strong>Mo – Sa</strong><span>für Sie geöffnet</span></div>
+  </div>
+</section>
+
+<!-- ============ ÜBER UNS ============ -->
+<section class="section about" id="ueber-uns">
+  <div class="container about-grid">
+    <div class="about-media reveal">
+      <div class="frame">
+        <!-- FOTO 4 (Über uns – idealerweise das Foto des Inhabers) -->
+        <img src="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-190558_fjoutt.png" alt="Einblick in den Salon Coiffeur Princess" loading="lazy" width="460" height="575">
+      </div>
+      <div class="about-tag">Coiffeur<br>aus Leidenschaft</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Über uns</span>
+      <h2>Ein Salon, der zum <em class="accent">Quartier</em> gehört</h2>
+      <p class="lead">Coiffeur Princess wird von Hasan Hamo geführt. Er steht bereits seit seiner Jugend am Coiffeurstuhl – und diese Erfahrung spüren Sie bei jedem Schnitt.</p>
+      <p>Unser Salon in Zürich-Affoltern ist ein klassischer Nachbarschaftssalon: Man kennt sich, man nimmt sich Zeit für ein Gespräch, und man geht mit einem guten Gefühl wieder nach Hause. Genau das schätzt unsere treue Stammkundschaft seit Jahren.</p>
+      <ul class="checks">
+        <li>Persönlicher, unkomplizierter Umgang</li>
+        <li>Für die ganze Familie: Damen, Herren und Kinder</li>
+        <li>Ehrliche, volksnahe Preise</li>
+      </ul>
+      <div class="signature">Hasan Hamo<small>Inhaber</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANGEBOT ============ -->
+<section class="section services" id="angebot">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Angebot</span>
+      <h2>Alles für Ihren Look – <em class="accent">unter einem Dach</em></h2>
+      <p class="lead">Vom klassischen Haarschnitt über die Rasur bis zur Echthaar-Verlängerung: Bei uns sind Sie in erfahrenen Händen.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="num">01</span>
+        <h3>Damen</h3>
+        <p>Klassische Haarschnitte und Styling – passend zu Ihrem Typ und Ihrem Alltag.</p>
+        <span class="price">ab ca. CHF 40.–</span>
+      </article>
+      <article class="card reveal">
+        <span class="num">02</span>
+        <h3>Herren</h3>
+        <p>Saubere Schnitte und gepflegtes Styling – zügig und präzise ausgeführt.</p>
+        <span class="price">ab CHF 30.–</span>
+      </article>
+      <article class="card reveal">
+        <span class="num">03</span>
+        <h3>Kinder</h3>
+        <p>Mit Geduld und einem Lächeln: Haarschnitte für unsere kleinen Kundinnen und Kunden.</p>
+        <span class="price">ab CHF 20.–</span>
+      </article>
+      <article class="card reveal">
+        <span class="num">04</span>
+        <h3>Rasur</h3>
+        <p>Die klassische Rasur beim Coiffeur – für ein rundum gepflegtes Erscheinungsbild.</p>
+        <span class="price">Preis auf Anfrage</span>
+      </article>
+      <article class="card reveal">
+        <span class="num">05</span>
+        <h3>Fadentechnik</h3>
+        <p>Traditionelle Gesichtshaarentfernung mit dem Faden (Threading) – präzise und bewährt.</p>
+        <span class="price">Preis auf Anfrage</span>
+      </article>
+      <article class="card reveal">
+        <span class="badge-new">Neu</span>
+        <span class="num">06</span>
+        <h3>Haarverlängerung</h3>
+        <p>Echthaar-Verlängerungen und Haarverdichtungen, z.&nbsp;B. mit Keratinbondings aus indischem oder russischem Haar.</p>
+        <span class="price">Persönliche Beratung im Salon</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREISE ============ -->
+<section class="section prices" id="preise">
+  <div class="container prices-grid">
+    <div class="reveal">
+      <span class="eyebrow">Preise</span>
+      <h2>Gute Arbeit muss <em class="accent" style="color:var(--gold-light)">nicht teuer</em> sein</h2>
+      <p class="lead">Unsere Preise sind bewusst volksnah gehalten – deutlich unter dem Zürcher Durchschnitt. So bleibt der Coiffeurbesuch für die ganze Familie erschwinglich.</p>
+      <a href="tel:+41443715555" class="btn btn-gold" style="margin-top:14px">Jetzt Termin vereinbaren</a>
+    </div>
+    <div class="reveal">
+      <ul class="price-list">
+        <li><span class="name">Herrenschnitt</span><span class="dots"></span><span class="amount">ab CHF 30.–</span></li>
+        <li><span class="name">Damenschnitt</span><span class="dots"></span><span class="amount">ab ca. CHF 40.–</span></li>
+        <li><span class="name">Kinderschnitt</span><span class="dots"></span><span class="amount">ab CHF 20.–</span></li>
+        <li><span class="name">Rasur</span><span class="dots"></span><span class="amount">auf Anfrage</span></li>
+        <li><span class="name">Fadentechnik<small>Gesichtshaarentfernung (Threading)</small></span><span class="dots"></span><span class="amount">auf Anfrage</span></li>
+        <li><span class="name">Haarverlängerung &amp; Verdichtung<small>Echthaar, z.&nbsp;B. Keratinbondings</small></span><span class="dots"></span><span class="amount">nach Beratung</span></li>
+      </ul>
+      <p class="price-note">Alle Angaben sind «ab»-Preise in Schweizer Franken. Den genauen Preis nennen wir Ihnen gerne telefonisch oder direkt im Salon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="section" id="galerie">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Galerie</span>
+      <h2>Einblicke in <em class="accent">unseren Salon</em></h2>
+      <p class="lead">Ein paar Eindrücke aus dem Salon und von unserer Arbeit. Tippen Sie auf ein Bild, um es grösser zu sehen.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- FOTO 1 -->
+      <button class="gallery-item reveal" data-lightbox aria-label="Bild 1 vergrössern">
+        <img src="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-193420_neev7u.png" alt="Coiffeur Princess – Einblick 1" loading="lazy">
+      </button>
+      <!-- FOTO 2 -->
+      <button class="gallery-item reveal" data-lightbox aria-label="Bild 2 vergrössern">
+        <img src="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-193431_veap64.png" alt="Coiffeur Princess – Einblick 2" loading="lazy">
+      </button>
+      <!-- FOTO 3 -->
+      <button class="gallery-item reveal" data-lightbox aria-label="Bild 3 vergrössern">
+        <img src="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-193446_sovj91.png" alt="Coiffeur Princess – Einblick 3" loading="lazy">
+      </button>
+      <!-- FOTO 4 -->
+      <button class="gallery-item reveal" data-lightbox aria-label="Bild 4 vergrössern">
+        <img src="https://res.cloudinary.com/dnrvauviq/image/upload/v1794356735/Screenshot_20261110-190558_fjoutt.png" alt="Coiffeur Princess – Einblick 4" loading="lazy">
+      </button>
+    </div>
+    <div class="gallery-cta reveal">
+      <p>Mehr Bilder gibt es auf Instagram.</p>
+      <a href="https://www.instagram.com/coiffeur.princess" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        @coiffeur.princess
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEWERTUNGEN ============ -->
+<section class="section reviews" id="bewertungen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kundenmeinungen</span>
+      <h2>Das schätzen unsere <em class="accent">Kundinnen und Kunden</em></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="score reveal">
+        <strong>4.8</strong>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>ca. 4.8 von 5 Sternen<br>bei über 160 Rezensionen auf Google</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Coiffeur%20Princess%2C%20In%20B%C3%B6den%20169%2C%208046%20Z%C3%BCrich" target="_blank" rel="noopener" class="btn btn-ghost">Bewertungen auf Google</a>
+      </div>
+      <div class="praise">
+        <div class="praise-item reveal">
+          <span>1</span>
+          <div><h3>Freundlich &amp; persönlich</h3><p>Viele Gäste loben die herzliche, unkomplizierte Art im Salon – man fühlt sich sofort willkommen.</p></div>
+        </div>
+        <div class="praise-item reveal">
+          <span>2</span>
+          <div><h3>Zügig bedient</h3><p>Geschätzt wird, dass es speditiv vorwärtsgeht – ohne dass die Sorgfalt darunter leidet.</p></div>
+        </div>
+        <div class="praise-item reveal">
+          <span>3</span>
+          <div><h3>Faires Preis-Leistungs-Verhältnis</h3><p>Gute Arbeit zu Preisen, die man in Zürich nicht mehr oft findet – ein Hauptgrund für unsere vielen Stammkunden.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="section" id="kontakt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kontakt &amp; Öffnungszeiten</span>
+      <h2>Wir freuen uns auf <em class="accent">Ihren Besuch</em></h2>
+      <p class="lead">Rufen Sie uns an, um einen Termin zu vereinbaren – oder schauen Sie bei uns in Zürich-Affoltern vorbei.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="panel reveal">
+        <h3>Öffnungszeiten</h3>
+        <table class="hours">
+          <tbody>
+            <tr data-day="1"><td>Montag</td><td>09:00 – 19:00</td></tr>
+            <tr data-day="2"><td>Dienstag</td><td>09:00 – 19:00</td></tr>
+            <tr data-day="3"><td>Mittwoch</td><td>09:00 – 19:00</td></tr>
+            <tr data-day="4"><td>Donnerstag</td><td>09:00 – 19:00</td></tr>
+            <tr data-day="5"><td>Freitag</td><td>09:00 – 19:00</td></tr>
+            <tr data-day="6"><td>Samstag</td><td>09:00 – 18:00</td></tr>
+            <tr data-day="0" class="off"><td>Sonntag</td><td>Geschlossen</td></tr>
+          </tbody>
+        </table>
+        <span class="status" data-status><i></i><span></span></span>
+      </div>
+
+      <div class="panel reveal">
+        <h3>So erreichen Sie uns</h3>
+        <ul class="contact-list">
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><small>Telefon</small><a href="tel:+41443715555">044 371 55 55</a></div>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><small>Adresse</small><b>In Böden 169, 8046 Zürich</b><p>Im Untergeschoss, in der Nähe des Supermarkts.</p></div>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span>
+            <div><small>Instagram</small><a href="https://www.instagram.com/coiffeur.princess" target="_blank" rel="noopener">@coiffeur.princess</a></div>
+          </li>
+        </ul>
+        <div class="contact-actions">
+          <a href="tel:+41443715555" class="btn btn-primary">Jetzt anrufen</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Coiffeur%20Princess%2C%20In%20B%C3%B6den%20169%2C%208046%20Z%C3%BCrich" target="_blank" rel="noopener" class="btn btn-ghost">Route planen</a>
+        </div>
+      </div>
+
+      <div class="map reveal">
+        <iframe title="Karte: Coiffeur Princess, In Böden 169, 8046 Zürich" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Coiffeur%20Princess%2C%20In%20B%C3%B6den%20169%2C%208046%20Z%C3%BCrich&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Zeit für einen neuen Schnitt?</h2>
+    <p>Ein kurzer Anruf genügt – wir finden den passenden Termin für Sie.</p>
+    <a href="tel:+41443715555" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      044 371 55 55
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18.5h18l1.5-10.5-5.6 4.1L12 4.5l-4.9 7.6L1.5 8 3 18.5z"/></svg>
+          <span><small>Coiffeur</small>Princess</span>
+        </a>
+        <p>Ihr sympathischer Quartier-Coiffeur in Zürich-Affoltern – für Damen, Herren und Kinder.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>In Böden 169, 8046 Zürich</li>
+          <li><a href="tel:+41443715555">044 371 55 55</a></li>
+          <li><a href="https://www.instagram.com/coiffeur.princess" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul>
+          <li>Mo – Fr: 09:00 – 19:00 Uhr</li>
+          <li>Sa: 09:00 – 18:00 Uhr</li>
+          <li>So: Geschlossen</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Coiffeur Princess · Inhaber: Hasan Hamo</span>
+      <span>In Böden 169 · 8046 Zürich</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Leiste -->
+<div class="callbar">
+  <a href="tel:+41443715555">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Anrufen
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Coiffeur%20Princess%2C%20In%20B%C3%B6den%20169%2C%208046%20Z%C3%BCrich" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Route
+  </a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht" hidden>
+  <button class="lb-close" aria-label="Schliessen">✕</button>
+  <button class="lb-prev" aria-label="Vorheriges Bild">‹</button>
+  <img src="" alt="">
+  <button class="lb-next" aria-label="Nächstes Bild">›</button>
+</div>
+
+<script>
+(function () {
+  // Jahr im Footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header-Schatten beim Scrollen
+  var header = document.querySelector('.header');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 10); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Mobile Navigation
+  var menuBtn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  }
+  menuBtn.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+
+  // Einblend-Animation
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Öffnungsstatus (Zeitzone Zürich)
+  var HOURS = { 0: null, 1: [9, 19], 2: [9, 19], 3: [9, 19], 4: [9, 19], 5: [9, 19], 6: [9, 18] };
+  var DAYS = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function updateStatus() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Zurich', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+      var get = function (t) { return parts.find(function (p) { return p.type === t; }).value; };
+      var day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+      var now = parseInt(get('hour'), 10) + parseInt(get('minute'), 10) / 60;
+      var h = HOURS[day], open = !!h && now >= h[0] && now < h[1], text;
+      if (open) {
+        text = 'Jetzt geöffnet · bis ' + pad(h[1]) + ':00 Uhr';
+      } else if (h && now < h[0]) {
+        text = 'Geschlossen · öffnet heute um ' + pad(h[0]) + ':00 Uhr';
+      } else {
+        var i = 1, next = (day + 1) % 7;
+        while (!HOURS[next]) { next = (next + 1) % 7; i++; }
+        text = 'Geschlossen · öffnet ' + (i === 1 ? 'morgen' : 'am ' + DAYS[next]) + ' um ' + pad(HOURS[next][0]) + ':00 Uhr';
+      }
+      document.querySelectorAll('[data-status]').forEach(function (el) {
+        el.classList.toggle('open', open); el.classList.toggle('closed', !open);
+        el.querySelector('span').textContent = text;
+      });
+      document.querySelectorAll('.hours tr').forEach(function (tr) {
+        tr.classList.toggle('today', parseInt(tr.dataset.day, 10) === day);
+      });
+    } catch (e) { /* Fallback: statischer Text bleibt stehen */ }
+  }
+  updateStatus(); setInterval(updateStatus, 60000);
+
+  // Lightbox
+  var items = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+  var lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img'), idx = 0;
+  function show(i) {
+    idx = (i + items.length) % items.length;
+    var img = items[idx].querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt;
+  }
+  function openLb(i) { show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.lb-close').focus(); }
+  function closeLb() { lb.hidden = true; document.body.style.overflow = ''; items[idx].focus(); }
+  items.forEach(function (el, i) { el.addEventListener('click', function () { openLb(i); }); });
+  lb.querySelector('.lb-close').addEventListener('click', closeLb);
+  lb.querySelector('.lb-prev').addEventListener('click', function () { show(idx - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { show(idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) { if (e.key === 'Escape') setMenu(false); return; }
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
+</body>
+</html>
